@@ -1,59 +1,66 @@
 <script context="module">
 	export const prerender = true;
-</script>
-
-<script>
-	import Counter from '$lib/Counter.svelte';
+	import { Github, Instagram, Linkedin } from 'lucide-svelte';
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
+<center>
+	<header>
+		<h1 class="rgb">Josh Clemens</h1>
+		<h2><span>Web Design </span><span>& </span><span>Development</span></h2>
+	</header>
+	<section id="sm-links">
+		<a href="https://www.linkedin.com/in/clemensjosh/" target="_blank"><Linkedin size="2.5rem" /></a
+		>
+		<a href="https://github.com/j-cleme" target="_blank"><Github size="2.5rem" /></a>
+		<a href="https://www.instagram.com/clemensjosh1/" target="_blank"><Instagram size="2.5rem" /></a
+		>
+	</section>
 		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+</center>
 
 <style>
-	section {
+	p {
+		color: var(--color-white);
+	}
+	header {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		flex: 1;
+		margin-top: 8vh;
 	}
 
 	h1 {
-		width: 100%;
+		color: var(--color-green);
+		font-size: 120px;
 	}
 
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	h2 {
+		font-size: 60px;
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	h2 :nth-child(2) {
+		color: var(--color-green);
+	}
+
+	section {
+		margin-top: 2vh;
+	}
+
+	#sm-links {
+		max-width: 45%;
+		min-height: 5rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	#sm-links a:hover {
+		color: var(--color-green);
 	}
 </style>
