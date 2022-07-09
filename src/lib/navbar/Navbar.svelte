@@ -9,10 +9,20 @@
 		<Code2 size="45" />
 	</a>
 	<nav>
-		<a class:active={$page.url.pathname === '/'} sveltekit:prefetch href="/">Home</a>
-		<a class:active={$page.url.pathname === '/blog'} sveltekit:prefetch href="/blog">Blog</a>
-		<a class:active={$page.url.pathname === '/contact'} sveltekit:prefetch href="/contact"
-			>Contact</a
+		<a class:active={$page.url.pathname === '/'} class="link-internal" sveltekit:prefetch href="/"
+			>Home</a
+		>
+		<a
+			class:active={$page.url.pathname === '/blog'}
+			class="link-internal"
+			sveltekit:prefetch
+			href="/blog">Blog</a
+		>
+		<a
+			class:active={$page.url.pathname === '/contact'}
+			class="link-internal"
+			sveltekit:prefetch
+			href="/contact">Contact</a
 		>
 	</nav>
 </div>
@@ -50,16 +60,18 @@
 	}
 
 	.active {
-		/* text-decoration: underline solid var(--color-green); */
 		color: var(--color-green);
 	}
-	/* 
-	.active::before {
-		content: '';
-		left: -100%;
-		top: 1rem;
-		width: 10rem;
-		height: 2px;
-		background-color: var(--color-green);
-	} */
+
+	.link-internal {
+		background-image: linear-gradient(to right, var(--color-white), var(--color-white));
+		background-position: bottom left;
+		background-repeat: no-repeat;
+		background-size: 0 0.25rem;
+		transition: background-size 0.5s ease;
+	}
+
+	.link-internal:hover {
+		background-size: 100% 0.25rem;
+	}
 </style>
