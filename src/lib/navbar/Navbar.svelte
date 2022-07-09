@@ -12,12 +12,12 @@
 		<a class:active={$page.url.pathname === '/'} class="link-internal" sveltekit:prefetch href="/"
 			>Home</a
 		>
-		<a
+		<!-- <a
 			class:active={$page.url.pathname === '/blog'}
 			class="link-internal"
 			sveltekit:prefetch
 			href="/blog">Blog</a
-		>
+		> -->
 		<a
 			class:active={$page.url.pathname === '/contact'}
 			class="link-internal"
