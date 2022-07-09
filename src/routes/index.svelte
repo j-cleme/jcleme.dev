@@ -19,13 +19,9 @@
 		<a href="https://www.instagram.com/clemensjosh1/" target="_blank"><Instagram size="2.5rem" /></a
 		>
 	</section>
-		</div>
 </center>
 
 <style>
-	p {
-		color: var(--color-white);
-	}
 	header {
 		display: flex;
 		flex-direction: column;
