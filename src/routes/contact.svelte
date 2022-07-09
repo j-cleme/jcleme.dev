@@ -1,4 +1,5 @@
 <script>
+	import Namedrop from '$lib/namedrop.svelte';
 	import { Mail } from 'lucide-svelte';
 </script>
 
@@ -7,10 +8,7 @@
 </svelte:head>
 
 <center>
-	<header>
-		<h1>Josh Clemens</h1>
-		<h2><span>Web Design </span><span>& </span><span>Development</span></h2>
-	</header>
+	<Namedrop />
 	<section id="icons">
 		<a href="mailto:clemensjosh@proton.me" class="icon">
 			<Mail size="2.5rem" />
@@ -29,23 +27,6 @@
 </center>
 
 <style>
-	header {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin-top: 8vh;
-	}
-	h1 {
-		color: var(--color-green);
-		font-size: 120px;
-	}
-	h2 {
-		font-size: 60px;
-	}
-	h2 :nth-child(2) {
-		color: var(--color-green);
-	}
 	h3 {
 		font-size: 40px;
 	}

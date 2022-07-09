@@ -1,5 +1,6 @@
 <script context="module">
 	export const prerender = true;
+	import Namedrop from '$lib/namedrop.svelte';
 	import { Github, Instagram, Linkedin } from 'lucide-svelte';
 </script>
 
@@ -8,10 +9,7 @@
 </svelte:head>
 
 <center>
-	<header>
-		<h1 class="rgb">Josh Clemens</h1>
-		<h2><span>Web Design </span><span>& </span><span>Development</span></h2>
-	</header>
+	<Namedrop />
 	<section id="sm-links">
 		<a href="https://www.linkedin.com/in/clemensjosh/" target="_blank"><Linkedin size="2.5rem" /></a
 		>
@@ -22,27 +20,6 @@
 </center>
 
 <style>
-	header {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin-top: 8vh;
-	}
-
-	h1 {
-		color: var(--color-green);
-		font-size: 120px;
-	}
-
-	h2 {
-		font-size: 60px;
-	}
-
-	h2 :nth-child(2) {
-		color: var(--color-green);
-	}
-
 	section {
 		margin-top: 2vh;
 	}
