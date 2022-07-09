@@ -16,13 +16,8 @@
 	</section>
 	<section>
 		<h3>Contact Me!</h3>
-		<form action="/api/contact" method="post" enctype="application/json">
-			<input type="text" name="name" id="name" placeholder="Name" />
-			<input type="email" name="email" id="email" placeholder="Email" />
-			<input type="text" name="subject" id="subject" placeholder="Subject" />
-			<textarea name="message" id="message" cols="30" rows="6" placeholder="Message" />
-			<input type="submit" value="Send" />
-		</form>
+		<p>The best way to get in contact with me is email. clemensjosh (at) proton (dot) me.</p>
+		<!-- <p>Alternatively, feel free to send me a message on</p> -->
 	</section>
 </center>
 
@@ -53,37 +48,5 @@
 		min-width: fit-content;
 		max-width: 45vw;
 		text-align: start;
-	}
-	section form {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		max-width: 95%;
-		margin-left: 2.5%;
-		margin-right: 2.5%;
-		min-width: fit-content;
-	}
-	section form input,
-	section form textarea {
-		width: 100%;
-		min-width: 40%;
-		margin-top: 1vh;
-		border: none;
-		border-bottom: 1px solid;
-		border-color: var(--color-green);
-		background-color: var(--color-black);
-		color: var(--color-white);
-	}
-	section form [type='submit'] {
-		align-self: flex-end;
-		max-width: fit-content;
-		min-width: fit-content;
-		background-color: var(--color-green);
-		color: var(--color-black);
-		padding-left: 1rem;
-		padding-right: 1rem;
-		padding-top: 0.5rem;
-		padding-bottom: 0.5rem;
 	}
 </style>
