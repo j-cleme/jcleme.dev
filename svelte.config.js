@@ -4,8 +4,8 @@ import adapter from '@sveltejs/adapter-auto';
 const config = {
 	kit: {
 		adapter: adapter({
-				split: false
-			}),
+			split: false
+		}),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',

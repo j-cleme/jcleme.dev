@@ -8,8 +8,3 @@ node_modules
 !.env.example
 .vercel
 .output
-
-# Local Netlify folder
-.netlify
-
-.vercel
