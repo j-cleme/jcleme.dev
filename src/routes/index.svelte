@@ -11,10 +11,12 @@
 <center>
 	<Namedrop />
 	<section id="sm-links">
-		<a href="https://www.linkedin.com/in/clemensjosh/" target="_blank"><Linkedin size="2.5rem" /></a
+		<a href="https://www.linkedin.com/in/clemensjosh/" target="_blank" title="LinkedIn"
+			><Linkedin size="2.5rem" /></a
 		>
-		<a href="https://github.com/j-cleme" target="_blank"><Github size="2.5rem" /></a>
-		<a href="https://www.instagram.com/clemensjosh1/" target="_blank"><Instagram size="2.5rem" /></a
+		<a href="https://github.com/j-cleme" target="_blank" title="Github"><Github size="2.5rem" /></a>
+		<a href="https://www.instagram.com/clemensjosh1/" target="_blank" title="Instagram"
+			><Instagram size="2.5rem" /></a
 		>
 	</section>
 </center>
