@@ -35,7 +35,23 @@
 		align-items: center;
 	}
 
+	#sm-links a {
+		border: 0.25rem solid var(--color-black);
+		border-radius: 50%;
+		width: 5rem;
+		height: 5rem;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background-image: linear-gradient(to right, var(--color-white), var(--color-white));
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 0 0;
+		transition: all 0.5s ease;
+	}
+
 	#sm-links a:hover {
-		color: var(--color-green);
+		color: var(--color-black);
+		background-size: 100% 25rem;
 	}
 </style>
