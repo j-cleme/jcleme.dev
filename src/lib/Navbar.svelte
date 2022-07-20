@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import '../../app.css';
+	import '../app.css';
 	import { Code2 } from 'lucide-svelte';
 </script>
 
