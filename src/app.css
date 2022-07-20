@@ -14,6 +14,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--color-black);
+	overflow-x: hidden;
 }
 
 h1,
