@@ -16,7 +16,10 @@
 	</section>
 	<section>
 		<h3>Contact Me!</h3>
-		<p>The best way to get in contact with me is email. clemensjosh (at) proton (dot) me.</p>
+		<p>
+			The best way to get in contact with me is to send an email to clemensjosh (at) proton (dot)
+			me.
+		</p>
 		<!-- <p>Alternatively, feel free to send me a message on</p> -->
 	</section>
 </center>
