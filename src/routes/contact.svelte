@@ -1,6 +1,5 @@
 <script>
 	import Namedrop from '$lib/namedrop.svelte';
-	import { Mail } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -11,7 +10,7 @@
 	<Namedrop />
 	<section id="icons">
 		<a href="mailto:clemensjosh@proton.me" class="icon">
-			<Mail size="2.5rem" />
+			<img src="/lucide/mail.svg" alt="Email" />
 		</a>
 	</section>
 	<section>
@@ -43,6 +42,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+	.icon * {
+		height: 2.5rem;
+		width: 2.5rem;
 	}
 	section {
 		margin-top: 2vh;

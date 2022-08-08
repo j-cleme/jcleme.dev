@@ -1,12 +1,11 @@
 <script>
 	import { page } from '$app/stores';
 	import '../app.css';
-	import { Code2 } from 'lucide-svelte';
 </script>
 
 <div>
 	<a class="icon" sveltekit:prefetch href="/">
-		<Code2 size="45" />
+		<img src="/lucide/code-2.svg" alt="Home button logo" />
 	</a>
 	<nav>
 		<a class:active={$page.url.pathname === '/'} class="link-internal" sveltekit:prefetch href="/"
@@ -73,5 +72,10 @@
 
 	.link-internal:hover {
 		background-size: 100% 0.25rem;
+	}
+
+	a img {
+		height: 45px;
+		width: 45px;
 	}
 </style>
