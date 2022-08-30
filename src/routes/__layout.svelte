@@ -3,7 +3,7 @@
 	import '../app.css';
 </script>
 
-<Navbar />
+<!-- <Navbar /> -->
 
 <main>
 	<slot />

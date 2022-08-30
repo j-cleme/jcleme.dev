@@ -35,6 +35,12 @@
 			>
 		</a>
 	</section>
+	<section id="contact">
+		<!-- <a href="mailto:clemensjosh@proton.me"> -->
+		<!-- <svg src="/mail.svg" alt="Mail Icon" /> -->
+		<!-- </a> -->
+		<p>clemensjosh (at) proton (dot) me</p>
+	</section>
 </center>
 
 <style>
@@ -42,7 +48,7 @@
 		margin-top: 2vh;
 	}
 
-	#sm-links {
+	section {
 		max-width: 45%;
 		min-height: 5rem;
 		display: flex;
@@ -51,7 +57,7 @@
 		align-items: center;
 	}
 
-	#sm-links a {
+	section a {
 		border: 0.25rem solid var(--color-black);
 		border-radius: 50%;
 		width: 5rem;
@@ -66,9 +72,20 @@
 		transition: all 0.5s ease;
 	}
 
-	#sm-links a:hover {
+	section a:hover {
 		color: var(--color-black);
 		background-size: 100% 600%;
+	}
+
+	#contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#contact svg {
+		stroke: var(--color-white);
 	}
 
 	a * {
