@@ -33,7 +33,7 @@
 		</a>
 	</section>
 	<section id="contact">
-		<p>clemensjosh (at) proton (dot) me</p>
+		<p>jcleme (at) proton (dot) me</p>
 	</section>
 </center>
 
