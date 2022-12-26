@@ -1,11 +1,13 @@
 <main class="bg-neutral-900 min-w-full min-h-screen flex flex-col items-center justify-center">
-	<h1 class="text-6xl text-neon-green font-['Staatliches'] -translate-y-32">Josh Clemens</h1>
-	<h2 class="text-3xl text-neutral-50 font-['Staatliches'] -translate-y-32">
+	<h1 class="text-6xl md:text-7xl lg:text-8xl text-neon-green font-['Staatliches'] -translate-y-32">
+		Josh Clemens
+	</h1>
+	<h2 class="text-3xl md:text-4xl lg:text-5xl text-neutral-50 font-['Staatliches'] -translate-y-32">
 		<span>Web Design </span><span class="text-neon-green">& </span><span>Development</span>
 	</h2>
 	<section
 		id="sm-links"
-		class="text-8xl fill-neutral-50 h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
+		class="fill-neutral-50 h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
 	>
 		<a
 			href="https://www.linkedin.com/in/clemensjosh/"
