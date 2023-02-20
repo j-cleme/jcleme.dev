@@ -1,20 +1,20 @@
-<main class="bg-neutral-900 min-w-full min-h-screen flex flex-col items-center justify-center">
-	<h1 class="text-6xl md:text-7xl lg:text-8xl text-neon-green font-['Staatliches'] -translate-y-32">
+<main class="bg-base min-w-full min-h-screen flex flex-col items-center justify-center">
+	<h1 class="text-6xl md:text-7xl lg:text-8xl text-cat-green font-['Staatliches'] -translate-y-32">
 		Josh Clemens
 	</h1>
 	<h2 class="text-3xl md:text-4xl lg:text-5xl text-neutral-50 font-['Staatliches'] -translate-y-32">
-		<span>Web Design </span><span class="text-neon-green">& </span><span>Development</span>
+		<span>Web Design </span><span class="text-cat-green">& </span><span>Development</span>
 	</h2>
 	<section
 		id="sm-links"
-		class="fill-neutral-50 h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
+		class="fill-cat-purple h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
 	>
 		<a
 			href="https://www.linkedin.com/in/clemensjosh/"
 			target="_blank"
 			rel="noreferrer"
 			title="LinkedIn"
-			class="h-10 w-10 hover:fill-neon-green active:fill-fuchsia-400"
+			class="h-10 w-10 hover:fill-cat-green active:fill-fuchsia-400"
 		>
 			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 				><title>LinkedIn</title><path
@@ -50,6 +50,6 @@
 		</a>
 	</section>
 	<p class="text-neutral-50 w-2/3 text-center -translate-y-32">
-		jcleme <span class="text-fuchsia-400 font-sans">@</span> proton.me
+		jcleme <span class="text-cat-purple font-sans">@</span> proton.me
 	</p>
 </main>
