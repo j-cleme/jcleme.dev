@@ -1,3 +1,11 @@
+<script lang="ts">
+	let showEmail: boolean = false;
+
+	function toggleShowEmail(): void {
+		showEmail = showEmail ? false : true;
+	}
+</script>
+
 <main class="bg-base min-w-full min-h-screen flex flex-col items-center justify-center">
 	<h1 class="text-6xl md:text-7xl lg:text-8xl text-cat-green font-['Staatliches'] -translate-y-32">
 		Josh Clemens
@@ -5,7 +13,7 @@
 	<h2 class="text-3xl md:text-4xl lg:text-5xl text-neutral-50 font-['Staatliches'] -translate-y-32">
 		<span>Web Design </span><span class="text-cat-green">& </span><span>Development</span>
 	</h2>
-	<section
+	<div
 		id="sm-links"
 		class="fill-cat-purple h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
 	>
@@ -14,7 +22,7 @@
 			target="_blank"
 			rel="noreferrer"
 			title="LinkedIn"
-			class="h-10 w-10 hover:fill-cat-green active:fill-fuchsia-400"
+			class="h-10 w-10 hover:fill-fuchsia-400"
 		>
 			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 				><title>LinkedIn</title><path
@@ -27,7 +35,7 @@
 			target="_blank"
 			rel="noreferrer"
 			title="Github"
-			class="h-10 w-10 hover:fill-neon-green active:fill-fuchsia-400"
+			class="h-10 w-10 hover:fill-fuchsia-400"
 		>
 			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 				><title>GitHub</title><path
@@ -36,20 +44,25 @@
 			>
 		</a>
 		<a
-			href="https://dev.to/jcleme"
-			target="_blank"
+			href="#0"
+			target=""
 			rel="noreferrer"
-			title="Dev.to"
-			class="h-10 w-10 hover:fill-neon-green active:fill-fuchsia-400"
+			title="ProtonMail"
+			class="h-10 w-10 hover:fill-fuchsia-400 after:'' after:w-full"
+			on:click={toggleShowEmail}
 		>
 			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-				><title>dev.to</title><path
-					d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.3zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z"
+				><title>ProtonMail</title><path
+					d="M12 20.351s-1.096-.108-1.955-.705c-.86-.596-6.58-4.688-6.58-4.688v8.098S3.513 24 4.55 24h14.9c1.036 0 1.085-.942 1.085-.942v-8.1s-5.723 4.092-6.58 4.69c-.86.595-1.955.704-1.955.704zm0-20.35S4.925-.23 3.465 7.623v5.35s.06.572 1.67 1.735c1.607 1.162 5.773 4.436 6.867 4.436 1.088 0 5.254-3.273 6.865-4.437 1.607-1.164 1.668-1.737 1.668-1.737V7.62C19.075-.229 12 .003 12 .003zm4.846 10.536h-9.69V7.623C8.14 3.723 12 3.67 12 3.67s3.863.054 4.846 3.954z"
 				/></svg
 			>
 		</a>
-	</section>
-	<p class="text-neutral-50 w-2/3 text-center -translate-y-32">
+	</div>
+	<p
+		class="{showEmail
+			? 'inline'
+			: 'hidden'} text-neutral-900 w-2/3 text-center -translate-y-32 py-4 bg-fuchsia-400/50 shadow-inner shadow-black"
+	>
 		jcleme <span class="text-cat-purple font-sans">@</span> proton.me
 	</p>
 </main>
