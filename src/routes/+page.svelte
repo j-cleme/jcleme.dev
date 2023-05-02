@@ -1,21 +1,21 @@
 <script lang="ts">
 	let showEmail: boolean = false;
-
-	function toggleShowEmail(): void {
-		showEmail = showEmail ? false : true;
-	}
 </script>
 
+<svelte:head>
+	<title>Josh Clemens</title>
+</svelte:head>
+
 <main class="bg-base min-w-full min-h-screen flex flex-col items-center justify-center">
-	<h1 class="text-6xl md:text-7xl lg:text-8xl text-cat-green font-['Staatliches'] -translate-y-32">
+	<h1 class="text-6xl md:text-7xl lg:text-8xl text-purple-600 font-['Staatliches'] -translate-y-32">
 		Josh Clemens
 	</h1>
 	<h2 class="text-3xl md:text-4xl lg:text-5xl text-neutral-50 font-['Staatliches'] -translate-y-32">
-		<span>Web Design </span><span class="text-cat-green">& </span><span>Development</span>
+		<span class="text-pink-600">Full Stack </span><span>Web Developer</span>
 	</h2>
 	<div
 		id="sm-links"
-		class="fill-cat-purple h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
+		class="fill-purple-600 h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
 	>
 		<a
 			href="https://www.linkedin.com/in/clemensjosh/"
@@ -49,7 +49,9 @@
 			rel="noreferrer"
 			title="ProtonMail"
 			class="h-10 w-10 hover:fill-fuchsia-400 after:'' after:w-full"
-			on:click={toggleShowEmail}
+			on:click={() => {
+				showEmail = showEmail ? false : true;
+			}}
 		>
 			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 				><title>ProtonMail</title><path
