@@ -10,10 +10,5 @@ module.exports = {
       }
     }
   },
-  plugins: [
-    require('@catppuccin/tailwindcss')({
-      prefix: 'false',
-      defaultFlavour: 'mocha'
-    }),
-  ],
+  plugins: [],
 };

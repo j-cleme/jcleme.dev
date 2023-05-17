@@ -10,8 +10,6 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@catppuccin/tailwindcss": "^0.1.1",
-		"@klarr-agency/circum-icons-svelte": "^2.0.1",
 		"@sveltejs/adapter-auto": "^1.0.0",
 		"@sveltejs/kit": "^1.8.1",
 		"autoprefixer": "^10.4.13",
