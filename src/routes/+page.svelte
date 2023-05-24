@@ -7,8 +7,8 @@
 	<title>Josh Clemens</title>
 	<!-- <meta property="og:image" content="og.png" /> -->
 	<meta property="description" content="Josh Clemens, Full Stack Web Developer" />
-	<meta property="og:description" content="Josh Clemens, Full Stack Web Developer" />
 	<meta property="og:title" content="Josh Clemens, Full Stack Web Developer" />
+	<meta property="og:description" content="Personal Website and Portfolio" />
 	<meta property="og:url" content="https://jcleme.dev/" />
 </svelte:head>
 
