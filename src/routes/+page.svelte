@@ -5,6 +5,11 @@
 
 <svelte:head>
 	<title>Josh Clemens</title>
+	<meta property="og:image" content="og.png" />
+	<meta property="description" content="Josh Clemens, Full Stack Web Developer" />
+	<meta property="og:description" content="Josh Clemens, Full Stack Web Developer" />
+	<meta property="og:title" content="Josh Clemens, Full Stack Web Developer" />
+	<meta property="og:url" content="joshclemens.dev" />
 </svelte:head>
 
 <div class="bg-base min-w-full min-h-screen">
