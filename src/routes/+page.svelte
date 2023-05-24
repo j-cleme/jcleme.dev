@@ -1,70 +1,33 @@
 <script lang="ts">
-	let showEmail: boolean = false;
+	import { Send } from 'lucide-svelte';
+	import SideNav from '../lib/SideNav.svelte';
 </script>
 
 <svelte:head>
 	<title>Josh Clemens</title>
 </svelte:head>
 
-<main class="bg-base min-w-full min-h-screen flex flex-col items-center justify-center">
-	<h1 class="text-6xl md:text-7xl lg:text-8xl text-purple-600 font-['Staatliches'] -translate-y-32">
-		Josh Clemens
-	</h1>
-	<h2 class="text-3xl md:text-4xl lg:text-5xl text-neutral-50 font-['Staatliches'] -translate-y-32">
-		<span class="text-pink-600">Full Stack </span><span>Web Developer</span>
-	</h2>
-	<div
-		id="sm-links"
-		class="fill-purple-600 h-20 w-2/3 md:w-1/3 flex flex-row justify-between md:justify-around items-center -translate-y-32"
-	>
-		<a
-			href="https://www.linkedin.com/in/clemensjosh/"
-			target="_blank"
-			rel="noreferrer"
-			title="LinkedIn"
-			class="h-10 w-10 hover:fill-fuchsia-400"
+<div class="bg-base min-w-full min-h-screen">
+	<main class="w-9/12 mx-auto pt-10 flex flex-col">
+		<img
+			src="headshot.png"
+			alt="headshot"
+			class="w-80 h-80 from-cat-purple bg-gradient-to-br to-pink-600 rounded-full shadow-xl shadow-black my-4"
+		/>
+		<h1
+			class="text-6xl md:text-7xl lg:text-8xl text-purple-600 font-['Staatliches'] bg-clip-text text-transparent from-cat-purple bg-gradient-to-br to-pink-600"
 		>
-			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-				><title>LinkedIn</title><path
-					d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-				/></svg
-			>
-		</a>
+			Hi, I'm Josh Clemens.
+		</h1>
+		<h2 class="text-3xl md:text-4xl lg:text-5xl text-neutral-50 font-['Staatliches']">
+			<span class="text-pink-600">Full Stack </span><span>Web Developer</span>
+		</h2>
 		<a
-			href="https://github.com/j-cleme"
-			target="_blank"
-			rel="noreferrer"
-			title="Github"
-			class="h-10 w-10 hover:fill-fuchsia-400"
-		>
-			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-				><title>GitHub</title><path
-					d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-				/></svg
-			>
+			href="mailto:jcleme@proton.me"
+			class="group px-4 py-2 my-4 max-h-max max-w-max bg-pink-600 rounded-md text-white shadow-black transition-all duration-200 hover:shadow-lg hover:text-black hover:-translate-y-2 active:animate-ping flex flex-row gap-2"
+			><span>Contact Me</span>
+			<span class="group-hover:text-black transition-all duration-200"><Send /></span>
 		</a>
-		<a
-			href="#0"
-			target=""
-			rel="noreferrer"
-			title="ProtonMail"
-			class="h-10 w-10 hover:fill-fuchsia-400 after:'' after:w-full"
-			on:click={() => {
-				showEmail = showEmail ? false : true;
-			}}
-		>
-			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-				><title>ProtonMail</title><path
-					d="M12 20.351s-1.096-.108-1.955-.705c-.86-.596-6.58-4.688-6.58-4.688v8.098S3.513 24 4.55 24h14.9c1.036 0 1.085-.942 1.085-.942v-8.1s-5.723 4.092-6.58 4.69c-.86.595-1.955.704-1.955.704zm0-20.35S4.925-.23 3.465 7.623v5.35s.06.572 1.67 1.735c1.607 1.162 5.773 4.436 6.867 4.436 1.088 0 5.254-3.273 6.865-4.437 1.607-1.164 1.668-1.737 1.668-1.737V7.62C19.075-.229 12 .003 12 .003zm4.846 10.536h-9.69V7.623C8.14 3.723 12 3.67 12 3.67s3.863.054 4.846 3.954z"
-				/></svg
-			>
-		</a>
-	</div>
-	<p
-		class="{showEmail
-			? 'inline'
-			: 'hidden'} text-neutral-900 w-2/3 text-center -translate-y-32 py-4 bg-fuchsia-400/50 shadow-inner shadow-black"
-	>
-		jcleme <span class="text-cat-purple font-sans">@</span> proton.me
-	</p>
-</main>
+		<SideNav />
+	</main>
+</div>
