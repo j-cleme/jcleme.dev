@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Josh Clemens</title>
-	<meta property="og:image" content="og.png" />
+	<!-- <meta property="og:image" content="og.png" /> -->
 	<meta property="description" content="Josh Clemens, Full Stack Web Developer" />
 	<meta property="og:description" content="Josh Clemens, Full Stack Web Developer" />
 	<meta property="og:title" content="Josh Clemens, Full Stack Web Developer" />
