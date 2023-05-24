@@ -9,7 +9,7 @@
 	<meta property="description" content="Josh Clemens, Full Stack Web Developer" />
 	<meta property="og:description" content="Josh Clemens, Full Stack Web Developer" />
 	<meta property="og:title" content="Josh Clemens, Full Stack Web Developer" />
-	<meta property="og:url" content="jcleme.dev" />
+	<meta property="og:url" content="https://jcleme.dev/" />
 </svelte:head>
 
 <div class="bg-base min-w-full min-h-screen">
