@@ -1,6 +1,15 @@
 <script lang="ts">
-	import { Send } from 'lucide-svelte';
+	import { ChevronDown, Send } from 'lucide-svelte';
 	import SideNav from '../lib/SideNav.svelte';
+	import ProjectCard from '../lib/ProjectCard.svelte';
+
+	let projects: { title: String; shortDesc: String }[] = [
+		{
+			title: 'example title',
+			shortDesc:
+				'example shortDesc Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea veritatis eveniet suscipit iste sint exercitationem, dolorum quibusdam! Beatae dolorum minima sunt provident velit! Quae dolor eum sunt velit rerum?'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -12,8 +21,8 @@
 	<meta property="og:url" content="https://jcleme.dev/" />
 </svelte:head>
 
-<div class="bg-base min-w-full min-h-screen">
-	<main class="w-9/12 mx-auto pt-10 flex flex-col">
+<div class="bg-base min-w-full min-h-screen flex flex-col items-center">
+	<main class="w-9/12 mx-auto mb-auto pt-10 flex flex-col justify-center">
 		<img
 			src="headshot.png"
 			alt="headshot"
@@ -35,4 +44,27 @@
 		</a>
 		<SideNav />
 	</main>
+	<div
+		on:click={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+		on:keypress={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+		class="py-4 flex flex-col justify-center items-center text-white"
+	>
+		<span class="text-lg font-bold">See More!</span>
+		<br />
+		<span class="animate-bounce"><ChevronDown /></span>
+	</div>
+</div>
+<div class="bg-base min-w-full min-h-screen">
+	<section id="projects" class="w-9/12 mx-auto mb-auto pt-10 flex flex-col justify-center">
+		<h1
+			class="text-6xl md:text-7xl lg:text-8xl text-purple-600 font-['Staatliches'] bg-clip-text text-transparent from-cat-purple bg-gradient-to-br to-purple-600"
+		>
+			Projects
+		</h1>
+		<div class="my-8">
+			{#each projects as project}
+				<ProjectCard title={project.title} shortDesc={project.shortDesc} />
+			{/each}
+		</div>
+	</section>
 </div>
