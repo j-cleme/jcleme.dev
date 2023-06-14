@@ -8,6 +8,11 @@
 			title: 'example title',
 			shortDesc:
 				'example shortDesc Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea veritatis eveniet suscipit iste sint exercitationem, dolorum quibusdam! Beatae dolorum minima sunt provident velit! Quae dolor eum sunt velit rerum?'
+		},
+		{
+			title: 'Subway',
+			shortDesc:
+				'example shortDesc Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea veritatis eveniet suscipit iste sint exercitationem, dolorum quibusdam! Beatae dolorum minima sunt provident velit! Quae dolor eum sunt velit rerum?'
 		}
 	];
 </script>
