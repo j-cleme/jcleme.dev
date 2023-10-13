@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Josh Clemens">
+  <main>
+    <img src="/public/headshot.png" />
+    <h1>Hi, I'm Josh.</h1>
+    <h2><span class="text-gradient">Full Stack</span> Web Developer</h2>
+    <p class="instructions">Contact Me</p>
+    <h3>My Projects</h3>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="https://teaching-tech-lit.jcleme.dev/"
+        title="Teaching Tech Lit"
+        body="Teaching people the meta-language of technology."
+      />
+      <Card
+        href="https://homebase.jcleme.dev/"
+        title="Homebase"
+        body="A small personalized home page."
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  main img {
+    margin: auto;
+    width: 200px;
+    max-width: calc(100% - 40rem);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-light), 33%)
+    );
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
