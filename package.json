@@ -1,15 +1,25 @@
 {
   "name": "jcleme.dev",
+  "author": "Josh Clemens <clemensjosh@proton.me> (https://jcleme.dev/)",
+  "url": "https://jcleme.dev/",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "astro-config": "astro preferences disable devToolbar"
   },
   "dependencies": {
-    "astro": "^3.3.0"
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.5.0",
+    "lucide": "^0.378.0",
+    "tailwindcss": "^3.0.24",
+    "three": "^0.162.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.162.0"
   }
 }

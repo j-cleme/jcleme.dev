@@ -1,82 +1,194 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+
+const APE_URL = "https://api.monkeytype.com/users/vasci/profile";
+const ape = await fetch(APE_URL, {
+  headers: {
+    Authorization: `ApeKey ${import.meta.env.APE_KEY}`,
+  },
+});
+const apeResponse = await ape.json();
+
+const LINKS = {
+  github: "https://www.github.com/j-cleme",
+  linkedin: "https://www.linkedin.com/in/clemensjosh/",
+  monkeytype: "https://monkeytype.com/profile/vasci",
+  astro: "https://astro.build/",
+};
 ---
 
-<Layout title="Josh Clemens">
-  <main>
-    <img src="/public/headshot.png" />
-    <h1>Hi, I'm Josh.</h1>
-    <h2><span class="text-gradient">Full Stack</span> Web Developer</h2>
-    <p class="instructions">Contact Me</p>
-    <h3>My Projects</h3>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://teaching-tech-lit.jcleme.dev/"
-        title="Teaching Tech Lit"
-        body="Teaching people the meta-language of technology."
-      />
-      <Card
-        href="https://homebase.jcleme.dev/"
-        title="Homebase"
-        body="A small personalized home page."
-      />
-    </ul>
+<script>
+  import { createIcons, Github, Linkedin } from "lucide";
+
+  createIcons({
+    icons: {
+      Github,
+      Linkedin,
+    },
+  });
+</script>
+
+<script>
+  import * as THREE from "three";
+  import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(80, 1, 1, 200);
+  scene.add(camera);
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(300, 300);
+  renderer.setClearColor(0xffffff, 0);
+  document.getElementById("three")?.appendChild(renderer.domElement);
+
+  const loader = new GLTFLoader();
+
+  let gem1: THREE.Group<THREE.Object3DEventMap>;
+  let gem2: THREE.Group<THREE.Object3DEventMap>;
+  let gem3: THREE.Group<THREE.Object3DEventMap>;
+
+  loader.load(
+    "/gem1.glb",
+    function (gltf) {
+      scene.add(gltf.scene);
+      gem1 = gltf.scene;
+      console.log("gem1 loaded");
+    },
+    undefined,
+    function (error) {
+      console.error(error);
+    }
+  );
+  loader.load(
+    "/gem2.glb",
+    function (gltf) {
+      gltf.scene.position.setX(1);
+      gltf.scene.position.setY(1);
+      gltf.scene.position.setZ(1);
+      scene.add(gltf.scene);
+      gem2 = gltf.scene;
+      console.log("gem2 loaded");
+    },
+    undefined,
+    function (error) {
+      console.error(error);
+    }
+  );
+  loader.load(
+    "/gem3.glb",
+    function (gltf) {
+      gltf.scene.position.setX(0);
+      gltf.scene.position.setY(2);
+      gltf.scene.position.setZ(-1);
+      scene.add(gltf.scene);
+      gem3 = gltf.scene;
+      console.log("gem3 loaded");
+    },
+    undefined,
+    function (error) {
+      console.error(error);
+    }
+  );
+
+  const pointLight = new THREE.PointLight(0xffffff);
+  pointLight.position.set(10, 10, 10);
+
+  const ambientLight = new THREE.AmbientLight(0xffffff);
+  scene.add(pointLight, ambientLight);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    camera.position.setX(2.49);
+    camera.position.setY(1.98);
+    camera.position.setZ(-0.96);
+    camera.rotation.set(-2.9, 1.1, 2.9);
+    gem1.rotation.y += 0.002;
+    gem2.rotation.y += 0.007;
+    gem3.rotation.y += 0.005;
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+</script>
+
+<Layout title="Josh Clemens's Site" description="Josh's personal site">
+  <main
+    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+  >
+    <Card colSpan={3} rowSpan={4}>
+      <div class="flex w-full h-full">
+        <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
+          <div class="flex flex-col h-full">
+            <p class="m-0 font-light text-xl">
+              Hi, I'm <b class="font-bold">Josh Clemens</b>, a full-stack
+              software developer with a strong focus on user experience and
+              effective storytelling on the web.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <Button href={LINKS.github} aria-label="github profile">
+              <i data-lucide="github" class="h-6"></i>
+              <span class="sr-only">GitHub Profile</span>
+            </Button>
+            <Button href={LINKS.linkedin} aria-label="linkedin profile">
+              <i data-lucide="linkedin" class="h-6"></i>
+              <span class="sr-only">Linkedin Profile</span>
+            </Button>
+          </div>
+        </div>
+        <div id="three"></div>
+      </div>
+    </Card>
+    <Card rowSpan={6} title="About me">
+      <div class="flex flex-col gap-2">
+        <p>
+          When given the option, I prefer to work with SvelteKit or Astro but
+          have experience with Vue, Svelte, Astro, Express, and a variety of
+          other JavaScript frameworks.
+        </p>
+        <p>
+          I enjoy rock climbing, 3d modeling, 3d printing, and custom keyboards
+          & input devices.
+        </p>
+        <p>
+          Check out my progress at improving my typing speed on one of the cards
+          below!
+        </p>
+      </div>
+    </Card>
+    <Card rowSpan={2} title="Want to get in contact?">
+      <div class="h-full">
+        <address class="flex flex-col mt-4">
+          <h2 style="color: var(--orange-11);">Send Me an Email!</h2>
+          <p>clemensjosh@proton.me</p>
+        </address>
+      </div>
+    </Card>
+    <Card title="Time zone" rowSpan={2}>
+      <p>EST/EDT</p>
+    </Card>
+    <Card href={LINKS.monkeytype} title="Monkeytype Stats" rowSpan={2}>
+      <p>Completed Tests: {apeResponse.data.typingStats.completedTests}</p>
+      <p>
+        Time Typing: {
+          Math.floor((apeResponse.data.typingStats.timeTyping % 86400) / 3600)
+        } hours, {
+          Math.floor((apeResponse.data.typingStats.timeTyping % 3600) / 60)
+        } minutes
+      </p>
+      <p>
+        Personal Best WPM: {apeResponse.data.personalBests.time["30"][0].wpm}
+      </p>
+    </Card>
   </main>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  main img {
-    margin: auto;
-    width: 200px;
-    max-width: calc(100% - 40rem);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-light), 33%)
-    );
-    border: 2px solid black;
-    border-radius: 50%;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
   }
 </style>
