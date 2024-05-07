@@ -1,0 +1,73 @@
+---
+interface Props {
+  title?: string;
+  colSpan?: number;
+  rowSpan?: number;
+  href?: string;
+}
+
+const { title, colSpan = 1, rowSpan = 1, href } = Astro.props;
+---
+
+<script>
+  import { createIcons, ArrowUpRight } from "lucide";
+  createIcons({
+    icons: {
+      ArrowUpRight,
+    },
+  });
+</script>
+
+{
+  href ? (
+    <a href={href} target="_blank" class="card">
+      <i data-lucide="arrow-up-right" />
+      <h2>{title}</h2>
+      <slot />
+    </a>
+  ) : (
+    <div class="card">
+      <h2>{title}</h2>
+      <slot />
+    </div>
+  )
+}
+
+<style define:vars={{ rows: rowSpan, cols: colSpan }}>
+  .card {
+    overflow: hidden;
+    padding: 1.5rem /* 24px */;
+    border: 1px;
+    border-radius: 0.5rem /* 8px */;
+    align-self: flex-start;
+    justify-self: flex-start;
+    position: relative;
+    grid-column: span var(--cols) / span var(--cols);
+    grid-row: span var(--rows) / span var(--rows);
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--gray-a2);
+    backdrop-filter: blur(60px);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 75ms;
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  @media (max-width: 640px) {
+    .card {
+      grid-column: span 1 / span 1;
+      grid-row: span 1 / span 1;
+    }
+  }
+
+  svg {
+    height: 1.5rem /* 24px */;
+    position: absolute;
+    top: 1rem /* 16px */;
+    right: 1rem /* 16px */;
+  }
+</style>

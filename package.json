@@ -1,28 +1,25 @@
 {
-	"name": "jcleme.dev",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev --host",
-		"build": "vite build",
-		"preview": "vite preview",
-		"lint": "prettier --plugin-search-dir . --check .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.1.0",
-		"@sveltejs/kit": "^1.22.4",
-		"autoprefixer": "^10.4.14",
-		"postcss": "^8.4.27",
-		"prettier": "^3.0.0",
-		"prettier-plugin-svelte": "^3.0.3",
-		"svelte": "^4.1.2",
-		"tailwindcss": "^3.3.3",
-		"vite": "^4.4.7"
-	},
-	"type": "module",
-	"dependencies": {
-		"@vercel/analytics": "^1.0.1",
-		"lucide-svelte": "^0.263.0"
-	}
+  "name": "jcleme.dev",
+  "author": "Josh Clemens <clemensjosh@proton.me> (https://jcleme.dev/)",
+  "url": "https://jcleme.dev/",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "astro-config": "astro preferences disable devToolbar"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.5.0",
+    "lucide": "^0.378.0",
+    "tailwindcss": "^3.0.24",
+    "three": "^0.162.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.162.0"
+  }
 }
