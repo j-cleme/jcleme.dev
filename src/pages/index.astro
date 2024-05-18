@@ -2,14 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
-
-const APE_URL = "https://api.monkeytype.com/users/vasci/profile";
-const ape = await fetch(APE_URL, {
-  headers: {
-    Authorization: `ApeKey ${import.meta.env.APE_KEY}`,
-  },
-});
-const apeResponse = await ape.json();
+import MonkeyCard from "../components/MonkeyCard.svelte";
 
 const LINKS = {
   github: "https://www.github.com/j-cleme",
@@ -170,19 +163,12 @@ const LINKS = {
     <Card title="Time zone" rowSpan={2}>
       <p>EST/EDT</p>
     </Card>
-    <Card href={LINKS.monkeytype} title="Monkeytype Stats" rowSpan={2}>
-      <p>Completed Tests: {apeResponse.data.typingStats.completedTests}</p>
-      <p>
-        Time Typing: {
-          Math.floor((apeResponse.data.typingStats.timeTyping % 86400) / 3600)
-        } hours, {
-          Math.floor((apeResponse.data.typingStats.timeTyping % 3600) / 60)
-        } minutes
-      </p>
-      <p>
-        Personal Best WPM: {apeResponse.data.personalBests.time["30"][0].wpm}
-      </p>
-    </Card>
+    <MonkeyCard
+      client:only="svelte"
+      href={LINKS.monkeytype}
+      title="Monkeytype Stats"
+      key={import.meta.env.APE_KEY}
+    />
   </main>
 </Layout>
 
