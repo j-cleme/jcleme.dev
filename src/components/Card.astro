@@ -1,4 +1,6 @@
 ---
+import IconArrow from "./IconArrow.astro";
+
 interface Props {
   title?: string;
   colSpan?: number;
@@ -9,19 +11,10 @@ interface Props {
 const { title, colSpan = 1, rowSpan = 1, href } = Astro.props;
 ---
 
-<script>
-  import { createIcons, ArrowUpRight } from "lucide";
-  createIcons({
-    icons: {
-      ArrowUpRight,
-    },
-  });
-</script>
-
 {
   href ? (
     <a href={href} target="_blank" class="card">
-      <i data-lucide="arrow-up-right" />
+      <IconArrow />
       <h2>{title}</h2>
       <slot />
     </a>
