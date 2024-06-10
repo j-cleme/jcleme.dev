@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
 import MonkeyCard from "../components/MonkeyCard.svelte";
+import IconGH from "../components/IconGH.astro";
+import IconLI from "../components/IconLI.astro";
 
 const LINKS = {
   github: "https://www.github.com/j-cleme",
@@ -11,17 +13,6 @@ const LINKS = {
   astro: "https://astro.build/",
 };
 ---
-
-<script>
-  import { createIcons, Github, Linkedin } from "lucide";
-
-  createIcons({
-    icons: {
-      Github,
-      Linkedin,
-    },
-  });
-</script>
 
 <script>
   import * as THREE from "three";
@@ -123,11 +114,11 @@ const LINKS = {
           </div>
           <div class="flex gap-4">
             <Button href={LINKS.github} aria-label="github profile">
-              <i data-lucide="github" class="h-6"></i>
+              <IconGH />
               <span class="sr-only">GitHub Profile</span>
             </Button>
             <Button href={LINKS.linkedin} aria-label="linkedin profile">
-              <i data-lucide="linkedin" class="h-6"></i>
+              <IconLI />
               <span class="sr-only">Linkedin Profile</span>
             </Button>
           </div>
